@@ -189,7 +189,7 @@ CA
                         <rect key="frame" x="0.0" y="0.0" width="985" height="659"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <webView wantsLayer="YES" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1f-KO-Ri7">
+                            <webView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C1f-KO-Ri7">
                                 <rect key="frame" x="0.0" y="0.0" width="985" height="659"/>
                                 <shadow key="shadow">
                                     <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

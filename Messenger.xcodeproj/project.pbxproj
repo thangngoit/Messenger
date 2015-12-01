@@ -13,8 +13,6 @@
 		0A6515A61C082E1800D56107 /* MessengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6515A51C082E1800D56107 /* MessengerViewController.m */; };
 		0A6515A81C082E1800D56107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6515A71C082E1800D56107 /* Assets.xcassets */; };
 		0A6515AB1C082E1800D56107 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6515A91C082E1800D56107 /* Main.storyboard */; };
-		0A6515B61C082E1800D56107 /* MessengerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6515B51C082E1800D56107 /* MessengerTests.m */; };
-		0A6515C11C082E1800D56107 /* MessengerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6515C01C082E1800D56107 /* MessengerUITests.m */; };
 		0A6515CF1C082EB100D56107 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6515CE1C082EB100D56107 /* WebKit.framework */; };
 		0AA7AAEE1C0BF24C007CFE26 /* MessengerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7AAED1C0BF24C007CFE26 /* MessengerWindowController.m */; };
 		0AA7AAF81C0C2010007CFE26 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0AA7AAF71C0C2010007CFE26 /* Credits.rtf */; };
@@ -53,11 +51,7 @@
 		0A6515AA1C082E1800D56107 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A6515AC1C082E1800D56107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A6515B11C082E1800D56107 /* Messenger.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Messenger.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A6515B51C082E1800D56107 /* MessengerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessengerTests.m; sourceTree = "<group>"; };
-		0A6515B71C082E1800D56107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A6515BC1C082E1800D56107 /* Messenger.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Messenger.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A6515C01C082E1800D56107 /* MessengerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessengerUITests.m; sourceTree = "<group>"; };
-		0A6515C21C082E1800D56107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A6515CE1C082EB100D56107 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		0AA7AAEC1C0BF24C007CFE26 /* MessengerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessengerWindowController.h; sourceTree = "<group>"; };
 		0AA7AAED1C0BF24C007CFE26 /* MessengerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessengerWindowController.m; sourceTree = "<group>"; };
@@ -98,8 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				0A65159D1C082E1800D56107 /* Messenger */,
-				0A6515B41C082E1800D56107 /* MessengerTests */,
-				0A6515BF1C082E1800D56107 /* MessengerUITests */,
 				0A65159C1C082E1800D56107 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,7 +115,6 @@
 				0AA7AAF01C0BF3A1007CFE26 /* GUI */,
 				0A6515A11C082E1800D56107 /* Supporting Files */,
 			);
-			name = Messenger;
 			path = Messenger;
 			sourceTree = "<group>";
 		};
@@ -136,26 +127,6 @@
 				0A6515A21C082E1800D56107 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0A6515B41C082E1800D56107 /* MessengerTests */ = {
-			isa = PBXGroup;
-			children = (
-				0A6515B51C082E1800D56107 /* MessengerTests.m */,
-				0A6515B71C082E1800D56107 /* Info.plist */,
-			);
-			name = MessengerTests;
-			path = MessengerTests;
-			sourceTree = "<group>";
-		};
-		0A6515BF1C082E1800D56107 /* MessengerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0A6515C01C082E1800D56107 /* MessengerUITests.m */,
-				0A6515C21C082E1800D56107 /* Info.plist */,
-			);
-			name = MessengerUITests;
-			path = MessengerUITests;
 			sourceTree = "<group>";
 		};
 		0AA7AAEF1C0BF38E007CFE26 /* Model */ = {
@@ -345,7 +316,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A6515B61C082E1800D56107 /* MessengerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +323,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A6515C11C082E1800D56107 /* MessengerUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
