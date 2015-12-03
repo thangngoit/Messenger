@@ -32,12 +32,6 @@
 }
 
 - (IBAction)clearDataAction:(id)sender {
-    NSHTTPCookie *cookie;
-    NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (cookie in [cookieJar cookies]) {
-        [cookieJar deleteCookie:cookie];
-    }
-    
-    [[DATACENTER messengerViewController] reload];
+    [[DATACENTER messengerViewController] clearData];
 }
 @end

@@ -121,9 +121,9 @@
 		0A6515A11C082E1800D56107 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0A6515CE1C082EB100D56107 /* WebKit.framework */,
 				0AA7AAF71C0C2010007CFE26 /* Credits.rtf */,
 				0A6515AC1C082E1800D56107 /* Info.plist */,
-				0A6515CE1C082EB100D56107 /* WebKit.framework */,
 				0A6515A21C082E1800D56107 /* main.m */,
 			);
 			name = "Supporting Files";

@@ -46,6 +46,23 @@
     [self.messengerWebView reload:self];
 }
 
+- (void)clearData {
+    NSAlert *alert = [NSAlert new];
+    [alert setMessageText:@"Do you want to clear Messenger Data?"];
+    [alert addButtonWithTitle:@"Yes"];
+    [alert addButtonWithTitle:@"Cancel"];
+    
+    if ([alert runModal] == NSAlertFirstButtonReturn) {
+        NSHTTPCookie *cookie;
+        NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+        for (cookie in [cookieJar cookies]) {
+            [cookieJar deleteCookie:cookie];
+        }
+        
+        [self reload];
+    }
+    
+}
 #pragma mark WebFrameLoadDelegate
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
@@ -55,18 +72,18 @@
 #pragma mark WebScripting protocol
 
 /* checks whether a selector is acceptable to be called from JavaScript */
-+ (BOOL) isSelectorExcludedFromWebScript:(SEL) selector {
++ (BOOL)isSelectorExcludedFromWebScript:(SEL) selector {
     return YES;
 }
 
 // right now exclude all properties (eg keys)
-+ (BOOL) isKeyExcludedFromWebScript:(const char*) name {
++ (BOOL)isKeyExcludedFromWebScript:(const char*) name {
     return YES;
 }
 
 #pragma mark WebPolicyDelegate
 
-- (void) webView:(WebView*) sender decidePolicyForNavigationAction:(NSDictionary*) actionInformation request:(NSURLRequest*) request frame:(WebFrame*) frame decisionListener:(id <WebPolicyDecisionListener>) listener {
+- (void)webView:(WebView*) sender decidePolicyForNavigationAction:(NSDictionary*) actionInformation request:(NSURLRequest*) request frame:(WebFrame*) frame decisionListener:(id <WebPolicyDecisionListener>) listener {
     NSString *url = [[request URL] absoluteString];
     NSString *urlHost = [[request URL] host];
     
@@ -104,7 +121,7 @@
     return [self webView:sender runJavaScriptConfirmPanelWithMessage:message initiatedByFrame:frame];
 }
 
-- (void) webView:(WebView*) sender runOpenPanelForFileButtonWithResultListener:(id <WebOpenPanelResultListener>) resultListener allowMultipleFiles:(BOOL) allowMultipleFiles {
+- (void)webView:(WebView*) sender runOpenPanelForFileButtonWithResultListener:(id <WebOpenPanelResultListener>) resultListener allowMultipleFiles:(BOOL) allowMultipleFiles {
     NSOpenPanel* openPanel = [NSOpenPanel openPanel];
     
     [openPanel setCanChooseFiles:YES];
@@ -116,7 +133,7 @@
     }
 }
 
-- (void) webView:(WebView*) sender runOpenPanelForFileButtonWithResultListener:(id <WebOpenPanelResultListener>) resultListener {
+- (void)webView:(WebView*) sender runOpenPanelForFileButtonWithResultListener:(id <WebOpenPanelResultListener>) resultListener {
     [self webView:sender runOpenPanelForFileButtonWithResultListener:resultListener allowMultipleFiles:YES];
 }
 
@@ -128,7 +145,7 @@
     [alert runModal];
 }
 
-- (BOOL) webView:(WebView*) sender runJavaScriptConfirmPanelWithMessage:(NSString*) message initiatedByFrame:(WebFrame*) frame {
+- (BOOL)webView:(WebView*) sender runJavaScriptConfirmPanelWithMessage:(NSString*) message initiatedByFrame:(WebFrame*) frame {
     NSAlert* alert = [[NSAlert alloc] init];
     [alert addButtonWithTitle:NSLocalizedString(@"OK", @"")];
     [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"")];
@@ -137,7 +154,7 @@
     return ([alert runModal] == NSAlertFirstButtonReturn);
 }
 
-- (NSString*) webView:(WebView*) sender runJavaScriptTextInputPanelWithPrompt:(NSString*) prompt defaultText:(NSString*) defaultText initiatedByFrame:(WebFrame*) frame {
+- (NSString*)webView:(WebView*) sender runJavaScriptTextInputPanelWithPrompt:(NSString*) prompt defaultText:(NSString*) defaultText initiatedByFrame:(WebFrame*) frame {
     NSAlert *alert = [[NSAlert alloc] init];
     [alert addButtonWithTitle:NSLocalizedString(@"OK", @"")];
     [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"")];
@@ -164,13 +181,13 @@
     return nil;
 }
 
-- (BOOL)webView:(WebView *)webView shouldChangeSelectedDOMRange:(DOMRange *)currentRange
-     toDOMRange:(DOMRange *)proposedRange
-       affinity:(NSSelectionAffinity)selectionAffinity
- stillSelecting:(BOOL)flag
-{
-    // disable text selection
-    return NO;
-}
+//- (BOOL)webView:(WebView *)webView shouldChangeSelectedDOMRange:(DOMRange *)currentRange
+//     toDOMRange:(DOMRange *)proposedRange
+//       affinity:(NSSelectionAffinity)selectionAffinity
+// stillSelecting:(BOOL)flag
+//{
+//    // disable text selection
+//    return NO;
+//}
 
 @end
