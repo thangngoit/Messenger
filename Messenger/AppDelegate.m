@@ -32,6 +32,6 @@
 }
 
 - (IBAction)clearDataAction:(id)sender {
-    [[DATACENTER messengerViewController] clearData];
+    [CommonUtil clearData];
 }
 @end

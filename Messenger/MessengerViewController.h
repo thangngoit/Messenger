@@ -17,9 +17,7 @@
 @property (weak) IBOutlet NSProgressIndicator *indicator;
 
 - (void)openURL:(NSURL*) url;
-- (void)downloadURL:(NSURLRequest*) request;
 - (void)reload;
-- (void)clearData;
 
 @end
 

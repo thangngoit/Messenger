@@ -23,8 +23,6 @@
 
 - (id)init {
     if (self = [super init]) {
-        self.downloadViewController = [[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"downloadViewController"];
-        self.currentURLToDownload = nil;
     }
     return self;
 }

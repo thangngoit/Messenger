@@ -9,17 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
 #import "Constant.h"
+#import "CommonUtil.h"
 #import "MessengerViewController.h"
 #import "MessengerWindowController.h"
-#import "DownloadViewController.h"
-#import "FilesDownloader.h"
 
 @interface DataCenter : NSObject
 
 @property (strong, nonatomic) MessengerWindowController *messengerWindowController;
 @property (strong, nonatomic) MessengerViewController   *messengerViewController;
-@property (strong, nonatomic) DownloadViewController    *downloadViewController;
-@property (weak, nonatomic) NSURL                       *currentURLToDownload;
 
 + (id)sharedData;
 

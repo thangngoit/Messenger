@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A0612A31C0C490300030C54 /* FilesDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0612A21C0C490300030C54 /* FilesDownloader.m */; };
 		0A6515A01C082E1800D56107 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A65159F1C082E1800D56107 /* AppDelegate.m */; };
 		0A6515A31C082E1800D56107 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6515A21C082E1800D56107 /* main.m */; };
 		0A6515A61C082E1800D56107 /* MessengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6515A51C082E1800D56107 /* MessengerViewController.m */; };
@@ -16,8 +15,8 @@
 		0A6515CF1C082EB100D56107 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6515CE1C082EB100D56107 /* WebKit.framework */; };
 		0AA7AAEE1C0BF24C007CFE26 /* MessengerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7AAED1C0BF24C007CFE26 /* MessengerWindowController.m */; };
 		0AA7AAF81C0C2010007CFE26 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0AA7AAF71C0C2010007CFE26 /* Credits.rtf */; };
-		0AAD85681C0C55DB0080BE3F /* DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD85671C0C55DB0080BE3F /* DownloadViewController.m */; };
 		0AAD856C1C0C57E90080BE3F /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD856B1C0C57E90080BE3F /* DataCenter.m */; };
+		0AE672F31C10969200BAD2F1 /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE672F21C10969200BAD2F1 /* CommonUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A0612A11C0C490300030C54 /* FilesDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesDownloader.h; sourceTree = "<group>"; };
-		0A0612A21C0C490300030C54 /* FilesDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesDownloader.m; sourceTree = "<group>"; };
 		0A0C5E3B1C0C37360062233C /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		0A65159B1C082E1800D56107 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A65159E1C082E1800D56107 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,10 +53,10 @@
 		0AA7AAEC1C0BF24C007CFE26 /* MessengerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessengerWindowController.h; sourceTree = "<group>"; };
 		0AA7AAED1C0BF24C007CFE26 /* MessengerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessengerWindowController.m; sourceTree = "<group>"; };
 		0AA7AAF71C0C2010007CFE26 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		0AAD85661C0C55DB0080BE3F /* DownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadViewController.h; sourceTree = "<group>"; };
-		0AAD85671C0C55DB0080BE3F /* DownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadViewController.m; sourceTree = "<group>"; };
 		0AAD856A1C0C57E90080BE3F /* DataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenter.h; sourceTree = "<group>"; };
 		0AAD856B1C0C57E90080BE3F /* DataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
+		0AE672F11C10969200BAD2F1 /* CommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtil.h; sourceTree = "<group>"; };
+		0AE672F21C10969200BAD2F1 /* CommonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +106,7 @@
 		0A65159D1C082E1800D56107 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				0AE672F01C10967E00BAD2F1 /* Utilities */,
 				0AAD85691C0C57D50080BE3F /* Data */,
 				0AA7AAF11C0BF4A5007CFE26 /* Controller */,
 				0AA7AAEF1C0BF38E007CFE26 /* Model */,
@@ -133,8 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				0A0C5E3B1C0C37360062233C /* Constant.h */,
-				0A0612A11C0C490300030C54 /* FilesDownloader.h */,
-				0A0612A21C0C490300030C54 /* FilesDownloader.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -157,8 +153,6 @@
 				0A6515A51C082E1800D56107 /* MessengerViewController.m */,
 				0AA7AAEC1C0BF24C007CFE26 /* MessengerWindowController.h */,
 				0AA7AAED1C0BF24C007CFE26 /* MessengerWindowController.m */,
-				0AAD85661C0C55DB0080BE3F /* DownloadViewController.h */,
-				0AAD85671C0C55DB0080BE3F /* DownloadViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -170,6 +164,15 @@
 				0AAD856B1C0C57E90080BE3F /* DataCenter.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		0AE672F01C10967E00BAD2F1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0AE672F11C10969200BAD2F1 /* CommonUtil.h */,
+				0AE672F21C10969200BAD2F1 /* CommonUtil.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,10 +307,9 @@
 			files = (
 				0A6515A61C082E1800D56107 /* MessengerViewController.m in Sources */,
 				0A6515A31C082E1800D56107 /* main.m in Sources */,
-				0AAD85681C0C55DB0080BE3F /* DownloadViewController.m in Sources */,
-				0A0612A31C0C490300030C54 /* FilesDownloader.m in Sources */,
 				0AAD856C1C0C57E90080BE3F /* DataCenter.m in Sources */,
 				0A6515A01C082E1800D56107 /* AppDelegate.m in Sources */,
+				0AE672F31C10969200BAD2F1 /* CommonUtil.m in Sources */,
 				0AA7AAEE1C0BF24C007CFE26 /* MessengerWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

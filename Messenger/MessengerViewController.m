@@ -36,32 +36,9 @@
     [[self.messengerWebView mainFrame] loadRequest:self.defaultURLRequest];
 }
 
-- (void)downloadURL:(NSURLRequest*) request {
-    [DATACENTER setCurrentURLToDownload:[request URL]];
-    [self presentViewControllerAsSheet:[DATACENTER downloadViewController]];
-}
-
 - (void)reload {
     [self.indicator startAnimation:self];
     [self.messengerWebView reload:self];
-}
-
-- (void)clearData {
-    NSAlert *alert = [NSAlert new];
-    [alert setMessageText:@"Do you want to clear Messenger Data?"];
-    [alert addButtonWithTitle:@"Yes"];
-    [alert addButtonWithTitle:@"Cancel"];
-    
-    if ([alert runModal] == NSAlertFirstButtonReturn) {
-        NSHTTPCookie *cookie;
-        NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-        for (cookie in [cookieJar cookies]) {
-            [cookieJar deleteCookie:cookie];
-        }
-        
-        [self reload];
-    }
-    
 }
 #pragma mark WebFrameLoadDelegate
 
