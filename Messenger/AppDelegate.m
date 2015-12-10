@@ -31,6 +31,10 @@
     [[DATACENTER messengerViewController] reload];
 }
 
+- (IBAction)stopAction:(id)sender {
+    [[DATACENTER messengerViewController] stop];
+}
+
 - (IBAction)clearDataAction:(id)sender {
     [CommonUtil clearData];
 }

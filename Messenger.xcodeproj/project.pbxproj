@@ -110,7 +110,7 @@
 				0AAD85691C0C57D50080BE3F /* Data */,
 				0AA7AAF11C0BF4A5007CFE26 /* Controller */,
 				0AA7AAEF1C0BF38E007CFE26 /* Model */,
-				0AA7AAF01C0BF3A1007CFE26 /* GUI */,
+				0AA7AAF01C0BF3A1007CFE26 /* View */,
 				0A6515A11C082E1800D56107 /* Supporting Files */,
 			);
 			path = Messenger;
@@ -120,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				0A6515CE1C082EB100D56107 /* WebKit.framework */,
+				0A6515A71C082E1800D56107 /* Assets.xcassets */,
 				0AA7AAF71C0C2010007CFE26 /* Credits.rtf */,
 				0A6515AC1C082E1800D56107 /* Info.plist */,
 				0A6515A21C082E1800D56107 /* main.m */,
@@ -135,13 +136,12 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		0AA7AAF01C0BF3A1007CFE26 /* GUI */ = {
+		0AA7AAF01C0BF3A1007CFE26 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0A6515A71C082E1800D56107 /* Assets.xcassets */,
 				0A6515A91C082E1800D56107 /* Main.storyboard */,
 			);
-			name = GUI;
+			name = View;
 			sourceTree = "<group>";
 		};
 		0AA7AAF11C0BF4A5007CFE26 /* Controller */ = {
@@ -185,6 +185,7 @@
 				0A6515971C082E1800D56107 /* Sources */,
 				0A6515981C082E1800D56107 /* Frameworks */,
 				0A6515991C082E1800D56107 /* Resources */,
+				0A24A8D01C192FE2001617E6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -299,6 +300,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A24A8D01C192FE2001617E6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\n#Increase Build number\nBUILDNUMBER=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nBUILDNUMBER=$(($BUILDNUMBER + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $BUILDNUMBER\" \"$INFOPLIST_FILE\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $BUILDNUMBER\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\n\n#Increase Version number when Release or Archive\nif [ \"${CONFIGURATION}\" = \"Release\" ]; then\n    VERSIONNUM=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$INFOPLIST_FILE\")\n    NEWSUBVERSION=`echo $VERSIONNUM | awk -F \".\" '{print $3}'`\n    NEWSUBVERSION=$(($NEWSUBVERSION + 1))\n    NEWVERSIONSTRING=`echo $VERSIONNUM | awk -F \".\" '{print $1 \".\" $2 \".'$NEWSUBVERSION'\" }'`\n    /usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $NEWVERSIONSTRING\" \"$INFOPLIST_FILE\"\n    /usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $NEWVERSIONSTRING\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A6515971C082E1800D56107 /* Sources */ = {

@@ -37,9 +37,16 @@
 }
 
 - (void)reload {
+    [self.messengerWebView stopLoading:self];
     [self.indicator startAnimation:self];
     [self.messengerWebView reload:self];
 }
+
+- (void)stop {
+    [self.messengerWebView stopLoading:self];
+    [self.indicator stopAnimation:self];
+}
+
 #pragma mark WebFrameLoadDelegate
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {

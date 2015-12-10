@@ -27,6 +27,11 @@
                                                 <action selector="reloadAction:" target="Voe-Tx-rLC" id="hZh-Fb-OTj"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Stop loading" keyEquivalent="." id="hb1-64-etB">
+                                            <connections>
+                                                <action selector="stopAction:" target="Voe-Tx-rLC" id="QgD-Em-dT8"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Clear Data" id="39t-TE-Cbb">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
@@ -186,11 +191,11 @@ CA
             <objects>
                 <viewController storyboardIdentifier="messengerViewController" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="MessengerViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="985" height="659"/>
+                        <rect key="frame" x="0.0" y="0.0" width="794" height="444"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <webView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C1f-KO-Ri7">
-                                <rect key="frame" x="0.0" y="0.0" width="985" height="659"/>
+                                <rect key="frame" x="0.0" y="0.0" width="794" height="444"/>
                                 <shadow key="shadow">
                                     <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </shadow>
@@ -207,21 +212,17 @@ CA
                                 </connections>
                             </webView>
                             <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="1UC-Ra-Z7P">
-                                <rect key="frame" x="477" y="314" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="UB6-Vn-Xsm"/>
-                                    <constraint firstAttribute="width" constant="32" id="bWR-P7-o6z"/>
-                                </constraints>
+                                <rect key="frame" x="381" y="206" width="32" height="32"/>
                                 <animations/>
                             </progressIndicator>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="1UC-Ra-Z7P" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="5uI-t9-a7E"/>
-                            <constraint firstItem="1UC-Ra-Z7P" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="71i-ss-ZB0"/>
-                            <constraint firstItem="C1f-KO-Ri7" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="8YZ-lp-hdf"/>
-                            <constraint firstItem="C1f-KO-Ri7" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ABE-1t-lrZ"/>
-                            <constraint firstAttribute="trailing" secondItem="C1f-KO-Ri7" secondAttribute="trailing" id="Of4-ra-RSC"/>
-                            <constraint firstAttribute="bottom" secondItem="C1f-KO-Ri7" secondAttribute="bottom" id="cDx-2f-7vb"/>
+                            <constraint firstItem="C1f-KO-Ri7" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="LGj-3K-88a"/>
+                            <constraint firstItem="C1f-KO-Ri7" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="M5n-8p-Ufn"/>
+                            <constraint firstItem="C1f-KO-Ri7" firstAttribute="centerX" secondItem="1UC-Ra-Z7P" secondAttribute="centerX" id="beB-Bc-Rgn"/>
+                            <constraint firstAttribute="trailing" secondItem="C1f-KO-Ri7" secondAttribute="trailing" id="dQc-QP-MM1"/>
+                            <constraint firstItem="1UC-Ra-Z7P" firstAttribute="centerY" secondItem="C1f-KO-Ri7" secondAttribute="centerY" id="vcC-kJ-u4A"/>
+                            <constraint firstAttribute="bottom" secondItem="C1f-KO-Ri7" secondAttribute="bottom" id="zzG-0S-OQp"/>
                         </constraints>
                         <animations/>
                     </view>
@@ -232,51 +233,7 @@ CA
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874.5" y="437.5"/>
-        </scene>
-        <!--Download View Controller-->
-        <scene sceneID="zgh-ko-4DD">
-            <objects>
-                <viewController storyboardIdentifier="downloadViewController" id="Pad-Y0-1ya" customClass="DownloadViewController" sceneMemberID="viewController">
-                    <view key="view" id="kvG-3M-qPE">
-                        <rect key="frame" x="0.0" y="0.0" width="489" height="233"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zGr-Bf-Z9b">
-                                <rect key="frame" x="400" y="13" width="75" height="32"/>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qz8-fA-kAO">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="closeAction:" target="Pad-Y0-1ya" id="Fv6-nV-DFN"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zO3-oz-kTQ">
-                                <rect key="frame" x="14" y="13" width="101" height="32"/>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="Download" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="m6s-LT-iiK">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="downloadAction:" target="Pad-Y0-1ya" id="6js-EU-5kI"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zGr-Bf-Z9b" secondAttribute="trailing" constant="20" id="2A2-FN-0tg"/>
-                            <constraint firstAttribute="bottom" secondItem="zO3-oz-kTQ" secondAttribute="bottom" constant="20" id="2ry-wk-ojM"/>
-                            <constraint firstAttribute="bottom" secondItem="zGr-Bf-Z9b" secondAttribute="bottom" constant="20" id="GGX-Lh-K1C"/>
-                            <constraint firstItem="zO3-oz-kTQ" firstAttribute="leading" secondItem="kvG-3M-qPE" secondAttribute="leading" constant="20" id="Pgf-Cv-GCa"/>
-                        </constraints>
-                        <animations/>
-                    </view>
-                </viewController>
-                <customObject id="L8S-6z-oga" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1655.5" y="224.5"/>
+            <point key="canvasLocation" x="779" y="330"/>
         </scene>
     </scenes>
 </document>

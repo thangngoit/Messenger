@@ -14,6 +14,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 - (IBAction)reloadAction:(id)sender;
+- (IBAction)stopAction:(id)sender;
 - (IBAction)clearDataAction:(id)sender;
 
 @end

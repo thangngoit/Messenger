@@ -18,6 +18,7 @@
 
 - (void)openURL:(NSURL*) url;
 - (void)reload;
+- (void)stop;
 
 @end
 
